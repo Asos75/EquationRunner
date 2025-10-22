@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         if(!(transform.position.x >= rightBoundX && move.x > 0) && !(transform.position.x <= leftBoundX && move.x < 0))
         {
-            controller.Move(move * Time.deltaTime * playerSpeed);
+            controller.Move(playerSpeed * Time.deltaTime * move);
         }
 
     }

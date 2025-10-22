@@ -9,43 +9,19 @@ public class GateCollider : MonoBehaviour
         {
             var isCorrect = gameObject.GetComponentInParent<BooleanHolder>()?.value ?? false;
 
-
             if (isCorrect)
             {
                 Debug.Log("Correct gate passed through.");
+                GameManager.Instance.AddScore(1);
                 Destroy(gameObject);
 
-                foreach (Transform child in collision.gameObject.transform)
-                {
-                    if (child.GetComponent<SphereCollider>() != null)
-                    {
-                        // Scale up by 10%
-                        child.localScale *= 1.05f;
-                        Debug.Log("Current scale: " + child.localScale);
-                    }
-                }
+
             }
             else
             {
                 Debug.Log("Incorrect gate! Applying penalty");
+                GameManager.Instance.ReduceHealth(50);
 
-                Destroy(gameObject);
-                foreach (Transform child in collision.gameObject.transform)
-                {
-                    if (child.GetComponent<SphereCollider>() != null)
-                    {
-                        // Scale up by 10%
-                        child.localScale -= Vector3.one * 0.33f;
-
-                        if(child.localScale.x < 0.5f)
-                        {
-                            Debug.Log("Ass has shrunk too much! Game Over.");
-                            Time.timeScale = 0;
-                        }
-                    }
-                }
-
-                
             }
         }
 
