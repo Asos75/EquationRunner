@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour
 
     void UpdateUI()
     {
-        scoreText.text = $"Score: {Score}";
-        healthText.text = $"Health: {Health}";
+        scoreText.text = $"{Score}";
+        healthText.text = $"{Health}";
     }
 
     void GameOver()
