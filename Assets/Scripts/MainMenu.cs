@@ -7,7 +7,6 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Play Game button clicked");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
 
     public void OpenSettings()
