@@ -1,0 +1,4 @@
+repository "EndlessRunner/EquationRunner@6872061056912@cloud"
+  path "/"
+    br "/main"
+    co "/main"
