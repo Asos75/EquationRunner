@@ -16,9 +16,15 @@ public class GateSpawner : MonoBehaviour
 
     private float timer = 0f;
 
+    private bool addSubEnabled = true;
+    private bool mulDivEnabled = false;
+
+
     void Start()
     {
         timer = spawnInterval;
+        addSubEnabled = PlayerPrefs.GetInt("AddSubEnabled", 1) == 1;
+        mulDivEnabled = PlayerPrefs.GetInt("MulDivEnabled", 1) == 1;
     }
 
     // Update is called once per frame
@@ -27,7 +33,7 @@ public class GateSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
-            var (equation, answer) = EquationGenerator.GenerateEquation(1, 10);
+            var (equation, answer) = EquationGenerator.GenerateEquation(1, 10, addSubEnabled, mulDivEnabled, 1);
 
             timer = 0f;
 
