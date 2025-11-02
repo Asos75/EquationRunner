@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0fa0a0ea424c94e8f2866c55d54670, type: 3}
+  m_Name: Penguin
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterName: Penguin
+  characterDescription: Chill and waddling, slides into action with style.
+  characterIcon: {fileID: 21300000, guid: 96fe700340553d54c9280fe1a4a11392, type: 3}
+  prefab: {fileID: 919132149155446097, guid: a2ef474392ac74f409c70c61ccb6c24a, type: 3}
+  unlockAchievement: 0

@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AchievementsScene.unity
     guid: ce655f2a1a87b7d40afbb31dc11b5b5b
+  - enabled: 1
+    path: Assets/Scenes/CharactersScnene.unity
+    guid: 58ed3ad43bf89ce49812f66c524913f6
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 65a89630f80f044ae9999980a796f720, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

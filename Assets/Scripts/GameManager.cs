@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
 
         addSubEnabled = PlayerPrefs.GetInt("AddSubEnabled", 1) == 1;
         mulDivEnabled = PlayerPrefs.GetInt("MulDivEnabled", 1) == 1;
+
+        AchievementManager.Instance?.UnlockAchievement(Achievement.StartTheGame);
     }
 
     void Start()
@@ -191,6 +193,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
+
 
     // Achievement checking methods
     private void CheckScoreAchievements()

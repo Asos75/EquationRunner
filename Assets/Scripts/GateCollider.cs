@@ -21,6 +21,7 @@ public class GateCollider : MonoBehaviour
             {
                 Debug.Log("Incorrect gate! Applying penalty");
                 GameManager.Instance.ReduceHealth(50);
+                Destroy(gameObject);
 
             }
         }

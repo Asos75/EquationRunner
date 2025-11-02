@@ -2,6 +2,8 @@ using UnityEngine;
 
 public enum Achievement
 {
+        StartTheGame,
+
         First10Points,
         First25Points,
         First50Points,

@@ -25,6 +25,7 @@ public class MainMenu : MonoBehaviour
     public void OpenCharacterSelection()
     {
         Debug.Log("Character Selection button clicked");
+        SceneManager.LoadScene(4);
     }
 
     public void QuitGame()

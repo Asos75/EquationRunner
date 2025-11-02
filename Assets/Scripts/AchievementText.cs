@@ -16,6 +16,8 @@ public static class AchievementText
 {
     public static readonly Dictionary<Achievement, AchievementInfo> Info = new Dictionary<Achievement, AchievementInfo>()
     {
+        {Achievement.StartTheGame, new AchievementInfo("Getting Started", "Started the game! Let's do some math!") },
+
         // Score milestones
         { Achievement.First10Points, new AchievementInfo("First 10 Points", "First 10 points! You're on your way!") },
         { Achievement.First25Points, new AchievementInfo("25 Points", "25 points scored! Keep going!") },
