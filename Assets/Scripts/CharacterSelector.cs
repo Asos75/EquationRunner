@@ -4,7 +4,6 @@ using TMPro;
 
 public class CharacterSelector : MonoBehaviour
 {
-    public CharacterData[] characters;
     public GameObject characterItemPrefab;
     public Transform contentParent;
 
@@ -15,7 +14,7 @@ public class CharacterSelector : MonoBehaviour
 
     void PopulateCharacters()
     {
-        foreach (var character in characters)
+        foreach (var character in CharacterManager.Instance.characters)
         {
             GameObject item = Instantiate(characterItemPrefab, contentParent);
 
@@ -39,7 +38,7 @@ public class CharacterSelector : MonoBehaviour
             {
                 if (unlocked)
                 {
-                    CharacterManager.Instance.SelectCharacter(System.Array.IndexOf(characters, capturedCharacter));
+                    CharacterManager.Instance.SelectCharacter(System.Array.IndexOf(CharacterManager.Instance.characters, capturedCharacter));
                     Debug.Log($"Selected character: {capturedCharacter.characterName}");
                 }
             });

@@ -15,5 +15,5 @@ MonoBehaviour:
   characterName: Chicken
   characterDescription: A clucky little adventurer, always pecking at new challenges.
   characterIcon: {fileID: 21300000, guid: 1cbd010c3655adf4aad48c5611a8302f, type: 3}
-  prefab: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  prefab: {fileID: 8725115107395226809, guid: 22d46f829d227b545a3440986f59e471, type: 3}
   unlockAchievement: 0

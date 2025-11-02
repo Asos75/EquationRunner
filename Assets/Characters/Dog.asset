@@ -16,5 +16,5 @@ MonoBehaviour:
   characterDescription: Loyal and playful, your trusty companion through thick and
     thin.
   characterIcon: {fileID: 21300000, guid: 963b1870c11c80240a3dc361f3bbd15e, type: 3}
-  prefab: {fileID: 2629182449500102118, guid: 15ca4494f24bf9741a48b37ec2c4c632, type: 3}
+  prefab: {fileID: 5214770719021768697, guid: a0e97ff24184a4745880a080ea0ce386, type: 3}
   unlockAchievement: 0

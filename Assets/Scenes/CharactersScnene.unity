@@ -556,14 +556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb90f7fcdae4c3740baedd5fff2c2273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelector
-  characters:
-  - {fileID: 11400000, guid: 372fe39d3f8093f449d19da94d8ca555, type: 2}
-  - {fileID: 11400000, guid: 400779aee6b50bb4d9b6f65922960b59, type: 2}
-  - {fileID: 11400000, guid: 73f6d6cb732a7d949a2566af9fa3d486, type: 2}
-  - {fileID: 11400000, guid: 3a4fa0f496738ba4f9f0c8b8f5c1c94e, type: 2}
-  - {fileID: 11400000, guid: a87c30a2ea82b264180462f064296536, type: 2}
-  - {fileID: 11400000, guid: e79b60f75f8c2454282b2ddd671052e6, type: 2}
-  - {fileID: 11400000, guid: f702a030888015940abd9f49905ee2a5, type: 2}
   characterItemPrefab: {fileID: 6767418402910475023, guid: 1e698d3d867afce41b2de4c7959228cc, type: 3}
   contentParent: {fileID: 697906737}
 --- !u!114 &842428201
@@ -578,6 +570,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302dc5a70c305404cbcee3536cb3fa4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterManager
+  characters:
+  - {fileID: 11400000, guid: 372fe39d3f8093f449d19da94d8ca555, type: 2}
+  - {fileID: 11400000, guid: 400779aee6b50bb4d9b6f65922960b59, type: 2}
+  - {fileID: 11400000, guid: 73f6d6cb732a7d949a2566af9fa3d486, type: 2}
+  - {fileID: 11400000, guid: 3a4fa0f496738ba4f9f0c8b8f5c1c94e, type: 2}
+  - {fileID: 11400000, guid: a87c30a2ea82b264180462f064296536, type: 2}
+  - {fileID: 11400000, guid: e79b60f75f8c2454282b2ddd671052e6, type: 2}
+  - {fileID: 11400000, guid: f702a030888015940abd9f49905ee2a5, type: 2}
   selectedCharacterIndex: 0
 --- !u!4 &842428202
 Transform:

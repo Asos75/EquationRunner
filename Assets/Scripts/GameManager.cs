@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         UpdateUI();
+        CharacterManager.Instance?.SpawnSelectedCharacter();
     }
 
     void Update()
