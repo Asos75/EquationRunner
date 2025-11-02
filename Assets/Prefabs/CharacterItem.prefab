@@ -434,6 +434,7 @@ GameObject:
   - component: {fileID: 5157072020988565944}
   - component: {fileID: 8650742787949210820}
   - component: {fileID: 3667091151717974382}
+  - component: {fileID: 7718214710507825702}
   m_Layer: 5
   m_Name: CharacterItem
   m_TagString: Untagged
@@ -485,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.43137258, g: 0.5058824, b: 0.54509807, a: 0.392}
+  m_Color: {r: 0.43137258, g: 0.5058824, b: 0.54509807, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -546,3 +547,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!225 &7718214710507825702
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767418402910475023}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
