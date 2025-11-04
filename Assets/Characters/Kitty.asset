@@ -16,4 +16,4 @@ MonoBehaviour:
   characterDescription: Curious and agile, loves to explore every nook and cranny.
   characterIcon: {fileID: 21300000, guid: fa7019e209992fd449ffb6015c001587, type: 3}
   prefab: {fileID: 5786773261690751750, guid: 88b6144452afa7e47931b0c5f4303bd2, type: 3}
-  unlockAchievement: 18
+  unlockAchievement: 0

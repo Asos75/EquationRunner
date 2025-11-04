@@ -16,4 +16,4 @@ MonoBehaviour:
   characterDescription: Strong and swift, ready to gallop into any adventure.
   characterIcon: {fileID: 21300000, guid: 6fa74a55bf9dcab4081a7f898c151e16, type: 3}
   prefab: {fileID: 721035892721176838, guid: f89d6dfe821727a4581f8a4391c18c92, type: 3}
-  unlockAchievement: 8
+  unlockAchievement: 0

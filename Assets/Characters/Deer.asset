@@ -16,4 +16,4 @@ MonoBehaviour:
   characterDescription: Graceful and quick, this forest dweller never misses a beat.
   characterIcon: {fileID: 21300000, guid: 544a233fd93c4b547be5cafd00b37559, type: 3}
   prefab: {fileID: 7159052356801963198, guid: 8aaccffbc5c599c4ca10cb5f8313764a, type: 3}
-  unlockAchievement: 2
+  unlockAchievement: 0
