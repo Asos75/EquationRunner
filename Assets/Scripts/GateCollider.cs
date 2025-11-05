@@ -3,19 +3,27 @@ using UnityEngine.UIElements;
 
 public class GateCollider : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public ParticleSystem collisionParticleSystem;
+    public bool once = true;
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && once)
         {
+            var em = collisionParticleSystem.emission;
+            var dur = collisionParticleSystem.duration;
             var isCorrect = gameObject.GetComponentInParent<BooleanHolder>()?.value ?? false;
 
             if (isCorrect)
             {
                 Debug.Log("Correct gate passed through.");
+
+                em.enabled = true;
+                collisionParticleSystem.Play();
+
                 GameManager.Instance.AddScore(1);
-                Destroy(gameObject);
-
-
+                once = false;
+                Invoke(nameof(DestroyObject), dur - 2.85f);
             }
             else
             {
@@ -26,5 +34,10 @@ public class GateCollider : MonoBehaviour
             }
         }
 
+    }
+
+    private void DestroyObject()
+    {
+        Destroy(gameObject);
     }
 }

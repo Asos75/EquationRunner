@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,7 +9,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public int Score { get; private set; } = 0;
-    public int Health { get; private set; } = 100;
+    public float Health { get; private set; } = 100;
+
+    private const int maxHealth = 150;
+    public float speed = 20.0f;
+    public float pointsMultiplier = 1.0f;
+    private int regenAmount = 50;
+    private float regenDuration = 5;
+    public bool isInvincible = false;
 
     public TMP_Text scoreText;
     public TMP_Text healthText;
@@ -20,7 +28,7 @@ public class GameManager : MonoBehaviour
     private bool mulDivEnabled = false;
 
     private bool isGameOver = false;
-
+    private bool isRegenerating = false;
     // Achievement tracking variables
     private int correctInRow = 0;
     private int correctAddSubInRow = 0;
@@ -44,6 +52,34 @@ public class GameManager : MonoBehaviour
 
         AchievementManager.Instance?.UnlockAchievement(Achievement.StartTheGame);
     }
+     public IEnumerator RegenerateHealth()
+{
+    if (isRegenerating) yield break; // prevent multiple coroutines
+    isRegenerating = true;
+
+    int chunks = regenAmount / 10;             // number of 10-point chunks
+    float timePerChunk = regenDuration / chunks;
+
+    for (int i = 0; i < chunks; i++)
+    {
+        // Increment health, respecting maxHealth and any damage taken
+        Health = Mathf.Min(maxHealth, Health + 10);
+        UpdateUI();
+        yield return new WaitForSeconds(timePerChunk);
+    }
+
+    // Add leftover points if regenAmount is not divisible by 10
+    int leftover = regenAmount % 10;
+    if (leftover > 0)
+    {
+        Health = Mathf.Min(maxHealth, Health + leftover);
+        UpdateUI();
+    }
+
+    isRegenerating = false;
+    Debug.Log("Health fully regenerated to: " + Health);
+}
+
 
     void Start()
     {
@@ -69,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        Score += amount;
+        Score += amount * Mathf.RoundToInt(pointsMultiplier);
         UpdateUI();
         CheckScoreAchievements();
         OnCorrectAnswer(addSubEnabled, mulDivEnabled);
@@ -145,6 +181,7 @@ public class GameManager : MonoBehaviour
 
     public void ReduceHealth(int amount)
     {
+        if(isInvincible)return;
         Health -= amount;
         if (Health < 0) Health = 0;
         UpdateUI();
@@ -154,7 +191,11 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
-
+public void AddBonus(int amount)
+    {
+        Score += amount;
+        UpdateUI();
+    }
     public void SetHealth(int amount)
     {
         Health = amount;
@@ -265,4 +306,30 @@ public class GameManager : MonoBehaviour
             AchievementManager.Instance?.UnlockAchievement(Achievement.TenGatesWithoutHitting);
         }
     }
+
+    /*
+     * POWER UP SECTION
+     */
+
+    public IEnumerator SpeedBoostRoutine(float multiplier, float time)
+    {
+        speed *= multiplier;
+        yield return new WaitForSeconds(time);
+        speed /= multiplier;
+    }
+
+    public IEnumerator PointsMultiplierRoutine(float multiplier, float time)
+    {
+        pointsMultiplier *= multiplier;
+        yield return new WaitForSeconds(time);
+        pointsMultiplier /= multiplier;
+    }
+
+    public IEnumerator InvincibilityRoutine(float time)
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(time);
+        isInvincible = false;
+    }
+
 }

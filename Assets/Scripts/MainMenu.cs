@@ -3,6 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private AudioSource clickSFX;
+
+    private void Awake()
+    {
+        clickSFX = gameObject.AddComponent<AudioSource>();
+    }
+
+    void Start()
+    {
+        AudioClip clickClip = Resources.Load<AudioClip>("Sound/Effects/click");
+        clickSFX.clip = clickClip;
+        clickSFX.volume = PlayerPrefs.GetFloat("SFXVolume", 0.8f);
+        clickSFX.Play();
+    }
+
     public void PlayGame()
     {
         Debug.Log("Play Game button clicked");

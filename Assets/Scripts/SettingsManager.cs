@@ -17,6 +17,13 @@ public class SettingsManager : MonoBehaviour
     [Header("Difficulty")]
     public TMP_Dropdown difficultyDropdown; // or TMP_Dropdown
 
+    private AudioSource clickSFX;
+
+    private void Awake()
+    {
+        clickSFX = gameObject.AddComponent<AudioSource>();
+    }
+
     void Start()
     {
         LoadSettings();
@@ -27,6 +34,11 @@ public class SettingsManager : MonoBehaviour
         difficultyDropdown.onValueChanged.AddListener(SetDifficulty);
         addSubToggle.onValueChanged.AddListener(delegate { SetOperations(); });
         mulDivToggle.onValueChanged.AddListener(delegate { SetOperations(); });
+
+        AudioClip clickClip = Resources.Load<AudioClip>("Sound/Effects/click");
+        clickSFX.clip = clickClip;
+        clickSFX.volume = PlayerPrefs.GetFloat("SFXVolume", 0.8f);
+        clickSFX.Play();
     }
 
     public void SetMusicVolume(float value)
@@ -35,18 +47,22 @@ public class SettingsManager : MonoBehaviour
             musicSource.volume = value;
         PlayerPrefs.SetFloat("MusicVolume", value);
         PlayerPrefs.Save();
+        clickSFX.Play();
     }
 
     public void SetSFXVolume(float value)
     {
         PlayerPrefs.SetFloat("SFXVolume", value);
         PlayerPrefs.Save();
+        clickSFX.volume = PlayerPrefs.GetFloat("SFXVolume", 0.8f);
+        clickSFX.Play();
     }
 
     public void SetDifficulty(int index)
     {
         PlayerPrefs.SetInt("Difficulty", index);
         PlayerPrefs.Save();
+        clickSFX.Play();
     }
 
     public void SetOperations()
@@ -54,6 +70,7 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetInt("AddSubEnabled", addSubToggle.isOn ? 1 : 0);
         PlayerPrefs.SetInt("MulDivEnabled", mulDivToggle.isOn ? 1 : 0);
         PlayerPrefs.Save();
+        clickSFX.Play();
     }
 
     public void LoadSettings()

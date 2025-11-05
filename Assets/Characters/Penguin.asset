@@ -16,4 +16,4 @@ MonoBehaviour:
   characterDescription: Chill and waddling, slides into action with style.
   characterIcon: {fileID: 21300000, guid: 96fe700340553d54c9280fe1a4a11392, type: 3}
   prefab: {fileID: 6213730163047946952, guid: ed1ab2961f3db7446908f9e98f2712bb, type: 3}
-  unlockAchievement: 0
+  unlockAchievement: 4
